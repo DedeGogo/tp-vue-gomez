@@ -1,29 +1,48 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// Loggeout Views
+import LogIn from '../views/LogIn.vue'
+// Logged in
+import LoggedIn from '../views/LoggedIn.vue'
+// as user
+import UserApp from '../views/user/UserApp.vue'
+// as admin
+import AdminApp from '../views/admin/AdminApp.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+const routes = [{
+        path: '/',
+        name: 'LogIn',
+        component: LogIn,
+    },
+    {
+        path: '/:userName', //this page contains the template (navbar, footer and side drawer)
+        name: 'LoggedIn',
+        component: LoggedIn,
+        // meta: { requiresAuth: true },
+        children: [{
+                path: '/user',
+                name: 'UserApp',
+                component: UserApp,
+            },
+            {
+                path: '/admin',
+                name: 'AdminApp',
+                component: AdminApp,
+            },
+        ],
+    },
+    // {
+    //     path: '*',
+    //     redirect: '/',
+    // },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    //   base: process.env.BASE_URL,
+    routes,
 })
 
 export default router

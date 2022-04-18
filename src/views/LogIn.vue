@@ -73,9 +73,9 @@ export default {
   },
   // adapt to pass by state set active user and route = user or admins
   methods: {
-    async handleSignin() {
-      await this.$store.dispatch('log_in', this.name)
-    },
+    // handleSignin() {
+    //   await this.$store.dispatch('log_in', this.name)
+    // },
     loading() {
       this.$store.commit('SET_LOADING')
       console.log('loading : ', this.$store.state.loading)

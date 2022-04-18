@@ -4,14 +4,16 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    state: {
+        isLoggedIn: false,
+        currentUser: undefined,
+    },
+    getters: {},
+    mutations: {},
+    actions: {
+        logIn({ commit }, { userName }) {
+            commit('SET_USER')
+        },
+    },
+    modules: {},
 })

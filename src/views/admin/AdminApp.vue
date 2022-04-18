@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import NavDrawer from "../../components/NavDrawer.vue";
-import NavBar from "../../components/NavBar.vue";
-import AppFooter from "../../components/AppFooter.vue";
+import NavDrawer from '../../components/NavDrawer.vue'
+import NavBar from '../../components/NavBar.vue'
+import AppFooter from '../../components/AppFooter.vue'
 
 export default {
   components: { NavDrawer, NavBar, AppFooter },
-  name: "UserApp",
+  name: 'UserApp',
   data: () => ({
     drawer: true,
   }),
-};
+}
 </script>
 
 <style>
