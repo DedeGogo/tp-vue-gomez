@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Logged in !!</p>
     <router-view></router-view>
   </div>
 </template>

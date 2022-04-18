@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Data from '../../public/data.json'
+import Router from '../router'
 // Je n'ai pas trouvé de forme d'importer un fichier statique avec fetch, donc j'ai fait un import
 
 Vue.use(Vuex)
@@ -37,19 +38,9 @@ export default new Vuex.Store({
         logIn({ commit }, userName) {
             let users = Data.users
             console.log('in actions.logIn', users.filter((user) => user.name === userName)[0])
-            commit(
-                'SET_USER',
-                users.filter((user) => user.name === userName)[0]
-                // users.filter((user) => {
-                //     return user.name == userName
-                // })
-                //{ name: 'Gandalf', isAdmin: true }
-                // Data.users.filter((user) => {
-                //     user.name == userName
-                // })
-            )
-
+            commit('SET_USER', users.filter((user) => user.name === userName)[0])
             commit('IS_LOGGEDIN')
+            Router.push({ name: 'LoggedIn', params: { userName } })
         },
     },
     modules: {},
