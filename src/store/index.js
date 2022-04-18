@@ -30,17 +30,26 @@ export default new Vuex.Store({
                 console.log('user is already loggedin')
             }
         },
-        SET_ACTIVE_USER: (state, user) => {
-            Vue.set(state, 'activeUserId', user.id)
+        SET_LOG_OUT: (state) => {
+            Vue.set(state, 'currentUser', undefined)
+            Vue.set(state, 'isLoggedIn', false)
         },
     },
     actions: {
-        logIn({ commit }, userName) {
+        logIn({ commit, state }, userName) {
             let users = Data.users
             console.log('in actions.logIn', users.filter((user) => user.name === userName)[0])
             commit('SET_USER', users.filter((user) => user.name === userName)[0])
             commit('IS_LOGGEDIN')
-            Router.push({ name: 'LoggedIn', params: { userName } })
+            if (state.currentUser.isAdmin) {
+                Router.push({ name: 'AdminApp', params: { userName } })
+            } else {
+                Router.push({ name: 'UserApp', params: { userName } })
+            }
+        },
+        logOut({ commit }) {
+            commit('SET_LOG_OUT')
+            Router.push({ name: 'LogIn' })
         },
     },
     modules: {},

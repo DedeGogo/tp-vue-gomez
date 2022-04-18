@@ -70,7 +70,6 @@ export default {
   methods: {
     handleSignin: async function () {
       await this.$store.dispatch('logIn', this.name)
-      console.log(`name: ${this.name}`)
     },
     // loading() {
     //   this.$store.commit('SET_LOADING')

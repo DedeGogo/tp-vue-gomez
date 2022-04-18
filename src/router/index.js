@@ -17,19 +17,20 @@ const routes = [{
         component: LogIn,
     },
     {
-        path: '/:userName', //this page contains the template (navbar, footer and side drawer) (TODO)
+        path: '/', //this page contains the template (navbar, footer and side drawer) (TODO)
         name: 'LoggedIn',
         component: LoggedIn,
-        // meta: { requiresAuth: true },
+        meta: { requiresAuth: true },
         children: [{
-                path: '/user',
+                path: ':userName/user',
                 name: 'UserApp',
                 component: UserApp,
             },
             {
-                path: '/admin',
+                path: ':userName/admin',
                 name: 'AdminApp',
                 component: AdminApp,
+                meta: { requiresAdmin: true },
             },
         ],
     },
@@ -39,12 +40,36 @@ const routes = [{
     // },
 ]
 
-// before.each if this.$state.isLoggedIn false, redirect to LogIn
-
 const router = new VueRouter({
     mode: 'history',
     //   base: process.env.BASE_URL,
     routes,
 })
+
+router.beforeEach((to, from, next) => {
+        if (to.matched.some((route) => route.meta.requiresAuth)) {
+            try {
+                // necessary: in case of reload, or to check if token is still valid
+                this.$store.state.isLoggedIn
+
+                next()
+            } catch (err) {
+                // next({ name: 'LogIn' })
+            }
+        }
+        if (to.matched.some((route) => route.meta.requiresAdmin)) {
+            try {
+                this.$store.state.currentUser.isAdmin
+                next()
+            } catch (err) {
+                //      next({ name: 'UserApp', params: { userName: this.$store.state.currentUser.name } })
+            }
+        }
+
+        next()
+            // `to` and `from` are both route objects
+    })
+    // before.each if this.$state.isLoggedIn false, redirect to LogIn
+    // if isAdmin false redirect to /user
 
 export default router
