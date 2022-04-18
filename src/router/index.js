@@ -17,7 +17,7 @@ const routes = [{
         component: LogIn,
     },
     {
-        path: '/:userName', //this page contains the template (navbar, footer and side drawer)
+        path: '/:userName', //this page contains the template (navbar, footer and side drawer) (TODO)
         name: 'LoggedIn',
         component: LoggedIn,
         // meta: { requiresAuth: true },
@@ -38,6 +38,8 @@ const routes = [{
     //     redirect: '/',
     // },
 ]
+
+// before.each if this.$state.isLoggedIn false, redirect to LogIn
 
 const router = new VueRouter({
     mode: 'history',

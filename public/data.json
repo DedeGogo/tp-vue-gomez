@@ -1,0 +1,367 @@
+{
+    "users": [{
+            "userId": 1952,
+            "name": "b",
+            "email": "bilbo@middle.earth",
+            "telephone": "0694578354",
+            "addresse": "1 Bag End",
+            "isAdmin": false,
+            "myRecepies": [12, 14, 16],
+            "myFavoriteRecepies": [14, 15],
+            "myShoppingLists": [],
+            "myComments": [22, 24, 25, 26],
+            "myFavoriteProducts": [1]
+        },
+        {
+            "userId": 2022,
+            "name": "g",
+            "email": "gandalf@middle.earth",
+            "telephone": "0712094576",
+            "addresse": "23 Belerian St, Rivendell",
+            "isAdmin": true,
+            "myRecepies": [11, 13, 15],
+            "myFavoriteRecepies": [11, 16],
+            "myShoppingLists": [],
+            "myComments": [21, 23, 27, 28],
+            "myFavoriteProducts": [3, 4]
+        }
+    ],
+    "products": [{
+            "id": 1,
+            "name": "Chou Vert",
+            "shortDescritpion": "Le chou de chez le voisin",
+            "description": "Ce chou et vert et en plus il est très bon. Il est bio et il a été ramasé par quelqu'un de super gentil",
+            "photo": "String",
+            "label": "String",
+            "barCode": 12345,
+            "comments": [21, 22],
+            "rating": 3,
+            "questions": []
+        },
+        {
+            "id": 2,
+            "name": "Pommes Gala",
+            "shortDescritpion": "Pommes Gala Bio du voisin",
+            "description": "Ces pommes sont bonnes crues et cuites, sur tout en tarte et en compote",
+            "photo": "String",
+            "label": "String",
+            "barCode": 12345,
+            "comments": [23],
+            "rating": 4,
+            "questions": []
+        },
+        {
+            "id": 3,
+            "name": "Farine",
+            "shortDescritpion": "Farine de blé t80",
+            "description": "Farine avec du blé ancien",
+            "photo": "String",
+            "label": "String",
+            "barCode": 12345,
+            "comments": [24],
+            "rating": 4,
+            "questions": []
+        },
+        {
+            "id": 4,
+            "name": "Beure",
+            "shortDescritpion": "Beure Doux 500gr",
+            "description": "Meule de beure doux",
+            "photo": "String",
+            "label": "String",
+            "barCode": 12345,
+            "comments": [25],
+            "rating": 2,
+            "questions": []
+        },
+        {
+            "id": 5,
+            "name": "Sucre",
+            "shortDescritpion": "Sucre 1k",
+            "description": "Sucre de canne du Bresil",
+            "photo": "String",
+            "label": "String",
+            "barCode": 12345,
+            "comments": [26],
+            "rating": 4,
+            "questions": []
+        },
+        {
+            "id": 6,
+            "name": "Saucisse",
+            "shortDescritpion": "Saucise, 800gr pur porc",
+            "description": "Saucisse des elfs de avec du porc et les epices secretes d'Arwen",
+            "photo": "String",
+            "label": "String",
+            "barCode": 12345,
+            "comments": [27, 28],
+            "rating": 5,
+            "questions": []
+        }
+    ],
+    "recepies": [{
+            "id": 11,
+            "name": "Pommes au Caramel",
+            "photo": "String",
+            "ingredients": [{
+                    "product": 2,
+                    "quantity": 5,
+                    "unit": "Pommes moyens",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 5,
+                    "quantity": 300,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 4,
+                    "quantity": 50,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                }
+            ],
+            "shortDescritpion": "Parfaites pour le petit dej",
+            "description": "Ces pommes au caramel sont le desert favorit de Bilbo, il en mange tous les jours",
+            "preparationTime": "30 min",
+            "comments": [21],
+            "steps": [{
+                    "id": 1,
+                    "checked": false,
+                    "description": "Bien laver les pommes"
+                },
+                {
+                    "id": 2,
+                    "checked": false,
+                    "description": "Melanger le sucre avec 500ml d'eau et le beure dans une cacerole et faire chauffer"
+                },
+                {
+                    "id": 3,
+                    "checked": false,
+                    "description": "Une fois tout est bien melangé, ajouter les pommes et couvrir. Laisser mijoter pendant 20 min"
+                },
+                {
+                    "id": 4,
+                    "checked": false,
+                    "description": "Mettre les pommes de côté et laisser reduire le caramel au feux doux."
+                },
+                {
+                    "id": 5,
+                    "checked": false,
+                    "description": "Servir les pommes et recouvrir avec le caramel"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Soupe de Cul-de-Sac",
+            "photo": "String",
+            "ingredients": [{
+                    "product": 6,
+                    "quantity": 800,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 1,
+                    "quantity": 500,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                }
+            ],
+            "shortDescritpion": "Soupe au choux et à la saucisse",
+            "description": "Conue dans tout le comtpé, cette soupe et une specialité passé de père en fills",
+            "preparationTime": "2 hueres",
+            "comments": [22, 23],
+            "steps": [{
+                    "id": 1,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 2,
+                    "checked": false,
+                    "description": "Servir avec du pain et de la creme fraiche"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Lembas",
+            "photo": "String",
+            "ingredients": [{
+                    "product": 3,
+                    "quantity": 500,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 5,
+                    "quantity": 500,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 5,
+                    "quantity": 500,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                }
+            ],
+            "shortDescritpion": "Le pain de elfes",
+            "description": "Ce pain aux arômes du fôret, peut vous faire tenir pendant des journs sans manger rien d'autre.",
+            "preparationTime": "1h30",
+            "comments": [24],
+            "steps": [{
+                    "id": 1,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 2,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 3,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 4,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Tarte aux Pommes",
+            "photo": "String",
+            "ingredients": [{
+                    "product": 3,
+                    "quantity": 150,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 4,
+                    "quantity": 150,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 5,
+                    "quantity": 100,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                },
+                {
+                    "product": 2,
+                    "quantity": 700,
+                    "unit": "gr",
+                    "checked": false,
+                    "notes": ""
+                }
+            ],
+            "shortDescritpion": "La preferé des magiciens",
+            "description": "Cette tarde va très bien avec de la glace et du syrop d'erable",
+            "preparationTime": "2 heures",
+            "comments": [25],
+            "steps": [{
+                    "id": 1,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 2,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 3,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 4,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 5,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                },
+                {
+                    "id": 6,
+                    "checked": false,
+                    "description": "Mettre tout dans une grande marmitte et faire cuire au feux doux pendant deux heures."
+                }
+            ]
+        }
+    ],
+    "comments": [{
+            "id": 21,
+            "content": "J'Aime !!!"
+        },
+        {
+            "id": 22,
+            "content": "Beurk !!!"
+        },
+        {
+            "id": 23,
+            "content": "Elles sont toutes rouges"
+        },
+        {
+            "id": 24,
+            "content": "J'ai mis trop de sucre, tout le monde était content"
+        },
+        {
+            "id": 25,
+            "content": "GAGNEZ 5000€ PAR MOIS SANS DEPUIS CHEZ VOUS EN QUELQUES HEURES"
+        },
+        {
+            "id": 27,
+            "content": "Slava Ukraine !!!"
+        },
+        {
+            "id": 28,
+            "content": "ça pique"
+        }
+    ],
+    "questions": [{
+            "id": 41,
+            "answered": false,
+            "content": "Eam tum adesse, cum dolor omnis absit; Tum Torquatus: Prorsus, inquit, assentior; Quis Aristidem non mortuum diligit?",
+            "answer": ""
+        },
+        {
+            "id": 42,
+            "answered": true,
+            "content": "Eam tum adesse, cum dolor omnis absit; Tum Torquatus: Prorsus, inquit, assentior; Quis Aristidem non mortuum diligit?",
+            "answer": "Qualem igitur hominem natura inchoavit? Invidiosum nomen est, infame, suspectum."
+        }
+    ],
+    "shoppingLists": [{
+        "id": "undefined",
+        "name": "undefined",
+        "products": [{
+            "product": "productId",
+            "quantity": "undefined",
+            "found": false
+        }]
+    }]
+}

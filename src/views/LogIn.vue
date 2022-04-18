@@ -47,12 +47,7 @@
               >
             </v-card-actions>
             <v-divider inset class="ma-6"></v-divider>
-            <div class="text-center text-capitalize mb-2 light-blue lighten-4">
-              <p>
-                <router-link class="black--text body-2" :to="{ name: 'Forgot' }"> Can't log in ? </router-link>&#8226;
-                <router-link class="black--text body-2" :to="{ name: 'SignUp' }">Sign up for an account</router-link>
-              </p>
-            </div>
+            <div class="text-center text-capitalize mb-2 light-blue lighten-4"></div>
           </v-card>
         </v-container>
       </v-card>
@@ -73,13 +68,14 @@ export default {
   },
   // adapt to pass by state set active user and route = user or admins
   methods: {
-    // handleSignin() {
-    //   await this.$store.dispatch('log_in', this.name)
-    // },
-    loading() {
-      this.$store.commit('SET_LOADING')
-      console.log('loading : ', this.$store.state.loading)
+    handleSignin: async function () {
+      await this.$store.dispatch('logIn', this.name)
+      console.log(`name: ${this.name}`)
     },
+    // loading() {
+    //   this.$store.commit('SET_LOADING')
+    //   console.log('loading : ', this.$store.state.loading)
+    // },
   },
 }
 </script>
