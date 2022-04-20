@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <nav-bar />
-    <nav-drawer />
+    <nav-drawer v-bind:contentType="drawerContent" />
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -19,6 +19,28 @@ export default {
   name: 'UserApp',
   data: () => ({
     drawer: true,
+    drawerContent: [
+      {
+        id: 1,
+        page: 'ProductsPage',
+        legend: 'Produits',
+      },
+      {
+        id: 2,
+        page: 'RecepiesPage',
+        legend: 'Recettes',
+      },
+      {
+        id: 3,
+        page: 'DashBoard',
+        legend: 'Mon Espace',
+      },
+      {
+        id: 4,
+        page: 'ShoppingList',
+        legend: 'Ma liste de courses',
+      },
+    ],
   }),
 }
 </script>

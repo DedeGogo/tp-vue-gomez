@@ -66,15 +66,10 @@ export default {
       isValid: true,
     }
   },
-  // adapt to pass by state set active user and route = user or admins
   methods: {
     handleSignin: async function () {
       await this.$store.dispatch('logIn', this.name)
     },
-    // loading() {
-    //   this.$store.commit('SET_LOADING')
-    //   console.log('loading : ', this.$store.state.loading)
-    // },
   },
 }
 </script>

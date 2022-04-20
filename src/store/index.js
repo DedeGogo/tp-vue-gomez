@@ -1,4 +1,3 @@
-//import { map } from 'core-js/core/array'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Data from '../../public/data.json'
@@ -11,6 +10,7 @@ export default new Vuex.Store({
     state: {
         isLoggedIn: false,
         currentUser: undefined,
+        theme: 'default',
     },
     getters: {},
     mutations: {
@@ -34,17 +34,24 @@ export default new Vuex.Store({
             Vue.set(state, 'currentUser', undefined)
             Vue.set(state, 'isLoggedIn', false)
         },
+        SET_THEME(state, newTheme) {
+            Vue.set(state, 'theme', newTheme)
+        },
     },
     actions: {
+        changeTheme({ commit }, newTheme) {
+            commit('SET_THEME', newTheme)
+        },
         logIn({ commit, state }, userName) {
             let users = Data.users
-            console.log('in actions.logIn', users.filter((user) => user.name === userName)[0])
             commit('SET_USER', users.filter((user) => user.name === userName)[0])
             commit('IS_LOGGEDIN')
             if (state.currentUser.isAdmin) {
                 Router.push({ name: 'AdminApp', params: { userName } })
+                commit('SET_THEME', 'AdminTheme') // could be optimized by putting in a beforeEach
             } else {
                 Router.push({ name: 'UserApp', params: { userName } })
+                commit('SET_THEME', 'UserTheme')
             }
         },
         logOut({ commit }) {

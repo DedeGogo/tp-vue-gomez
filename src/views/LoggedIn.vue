@@ -1,12 +1,12 @@
 <template>
   <div>
-    <p>Logged in !!</p>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 /* Is this View necesarry?!? If it is, it should do something !!!!
+it is the common node for all loggedin pages
  */
 export default {
   name: 'LoggedIn',
